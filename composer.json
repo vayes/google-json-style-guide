@@ -1,0 +1,30 @@
+{
+    "name": "vayes/google-json-style-guide",
+    "type": "library",
+    "description": "A class approach for Api Responses based on Google Json Style Guide.",
+    "keywords": [],
+    "homepage": "https://vayes.com.tr",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Yahya Erturan",
+          "email": "yahya@erturan.com.tr"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "vayes/serializer": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vayes/serializer"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Vayes\\GoogleJsonStyleGuide\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
