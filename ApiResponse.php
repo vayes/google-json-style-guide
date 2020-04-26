@@ -251,7 +251,7 @@ class ApiResponse implements GoogleJsonStyleInterface
             // Auto fill some "null" fields if items are set
             if (false === empty($apiResponseArray['data']['items'])) {
                 if (false === isset($apiResponseArray['data']['total_pages'])
-                        || null === $apiResponseArray['data']['total_pages']
+                    || null === $apiResponseArray['data']['total_pages']
                 ) {
                     $apiResponseArray['data']['total_pages'] = 1;
                 }
@@ -284,10 +284,12 @@ class ApiResponse implements GoogleJsonStyleInterface
 
         if (false === empty($apiResponseArray['params'])) {
             foreach ($apiResponseArray['params'] as $propName => $propValue) {
-                if (null === $propValue) {
+                if (null === $propValue || true === empty($propValue)) {
                     unset($apiResponseArray['params'][$propName]);
                 }
             }
+        } else {
+            unset($apiResponseArray['params']);
         }
 
         foreach ($this->getTopLevelProperties() as $propName) {
